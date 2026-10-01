@@ -1,0 +1,143 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: system-ui, sans-serif;
+  background: #f5f5f0;
+  color: #1a1a1a;
+  min-height: 100vh;
+}
+
+.app {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+h1 span { color: #3a7d44; }
+
+.card {
+  background: #fff;
+  border: 1px solid #e0e0d8;
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.card-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #888;
+}
+
+.location-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.location-text {
+  font-size: 0.9rem;
+  color: #444;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: opacity 0.15s;
+}
+
+button:disabled { opacity: 0.4; cursor: default; }
+
+.btn-primary {
+  background: #3a7d44;
+  color: #fff;
+}
+
+.btn-primary:hover:not(:disabled) { opacity: 0.85; }
+
+.btn-sm {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.8rem;
+}
+
+.search-wrapper { position: relative; }
+
+.search-input {
+  width: 100%;
+  padding: 0.6rem 0.9rem;
+  border: 1px solid #d0d0c8;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  outline: none;
+  background: #fafaf8;
+}
+
+.search-input:focus { border-color: #3a7d44; }
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0; right: 0;
+  background: #fff;
+  border: 1px solid #d0d0c8;
+  border-radius: 8px;
+  max-height: 220px;
+  overflow-y: auto;
+  z-index: 10;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+.dropdown-item {
+  padding: 0.55rem 0.9rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.dropdown-item:hover, .dropdown-item.active { background: #f0f7f1; }
+
+.result-card {
+  background: #f0f7f1;
+  border: 1px solid #c0ddc8;
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.result-species { font-size: 1.1rem; font-weight: 700; }
+.result-borough { font-size: 0.85rem; color: #666; }
+
+.maps-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  background: #3a7d44;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  width: fit-content;
+}
+
+.maps-link:hover { opacity: 0.85; }
+
+.error { color: #c0392b; font-size: 0.85rem; }
