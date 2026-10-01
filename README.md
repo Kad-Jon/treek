@@ -21,7 +21,7 @@ The seed script expects the tree dataset at:
 backend/data/Borough_tree_list_2025Nov.csv
 ```
 
-The file is ~200 MB, so it isn't committed to the repo. Download it and place it at that path before starting the app.
+The file is ~200 MB, so it isn't committed to the repo. Download it from [the GLA](https://data.london.gov.uk/download/2r45m/e62a6a1f-390d-4193-ae32-3aabd9846f36/Borough_tree_list_2025Nov.csv) and place it at the above path before starting the app.
 
 ### 2. Run with Docker Compose
 
@@ -68,6 +68,9 @@ The Vite dev server proxies `/api/*` to the backend (default `http://localhost:8
 |--------|------------------|-------------------------------|-------------------------------------------------|
 | GET    | `/species`       | none                          | Sorted list of distinct common names            |
 | GET    | `/trees/nearest` | `species`, `lat`, `lng`       | `{ lat, lon, common_name, borough }`, or 404    |
+| GET    | `/walk`          | `species` (repeat, 1–9), `lat`, `lng` | `{ stops: [...], distance_m }`, or 404 |
+
+`/walk` picks the nearest tree of each species, then orders the stops into the shortest loop that starts and ends at your location. `distance_m` is the straight-line length of that loop, so the real walking route will be longer. The 9-stop limit comes from Google Maps, which accepts at most 9 waypoints in a directions URL.
 
 Species matching is case-insensitive. Distance is computed with PostGIS `geography`, so results are in true metres rather than degrees.
 
@@ -76,4 +79,4 @@ Species matching is case-insensitive. Distance is computed with PostGIS `geograp
 See [requirements.md](requirements.md).
 
 - **M1** (done): find the nearest tree of a chosen species and link to it on Google Maps.
-- **M2:** pick several trees and get a circular walking route that visits them all.
+- **M2** (done): pick several trees and get a circular walking route that visits them all.

@@ -141,3 +141,89 @@ button:disabled { opacity: 0.4; cursor: default; }
 .maps-link:hover { opacity: 0.85; }
 
 .error { color: #c0392b; font-size: 0.85rem; }
+
+.mode-toggle {
+  display: flex;
+  background: #e8e8e0;
+  border-radius: 10px;
+  padding: 4px;
+  gap: 4px;
+}
+
+.mode-toggle button {
+  flex: 1;
+  background: transparent;
+  color: #666;
+}
+
+.mode-toggle button.active {
+  background: #fff;
+  color: #1a1a1a;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: #f0f7f1;
+  border: 1px solid #c0ddc8;
+  border-radius: 999px;
+  padding: 0.25rem 0.35rem 0.25rem 0.75rem;
+  font-size: 0.85rem;
+}
+
+.chip-remove {
+  background: transparent;
+  color: #3a7d44;
+  padding: 0 0.35rem;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.chip-remove:hover { color: #c0392b; }
+
+.walk-stops {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+}
+
+.walk-stops li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.stop-badge {
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background: #3a7d44;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stop-badge-home { background: #888; }
+
+.walk-stop-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.walk-stop-link:hover .walk-stop-name { text-decoration: underline; }
+
+.walk-stop-name { font-weight: 600; }
